@@ -11,3 +11,4 @@ pred.intent.csv
 pred.slot.csv
 Dockerfile
 requirements.in
+tmp_storage.ipynb

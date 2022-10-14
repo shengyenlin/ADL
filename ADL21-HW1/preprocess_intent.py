@@ -19,7 +19,6 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S",
 )
 
-
 def build_vocab(
     words: Counter, vocab_size: int, output_dir: Path, glove_path: Path
 ) -> None:
