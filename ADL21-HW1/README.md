@@ -20,20 +20,20 @@ bash download.sh
 ADL21-HW1/ 
 ┣ cache/ 
 ┃ ┣ intent/ 
-┃ ┃ ┣ embeddings.pt
+┃ ┃ ┣ embeddings.pt         #word embedding for intent classification
 ┃ ┃ ┣ intent2idx.json
-┃ ┃ ┣ vocab.json
-┃ ┃ ┗ vocab.pkl
+┃ ┃ ┣ vocab.json                 
+┃ ┃ ┗ vocab.pkl             #vocab class for intent classification in utils.py
 ┃ ┗ slot/
-┃   ┣ embeddings.pt
+┃   ┣ embeddings.pt         #word embedding for slot tagging
 ┃   ┣ intent2idx.json
 ┃   ┣ tag2idx.json
 ┃   ┗ vocab.pkl
 ┣ ckpt/
 ┃ ┣ intent/
-┃ ┃ ┗ best_intent.ckpt
+┃ ┃ ┗ best_intent.ckpt      #best model of intent classification
 ┃ ┗ slot/
-┃   ┗ best_slot.ckpt
+┃   ┗ best_slot.ckpt        #best model of slot tagging
 ┣ data/
 ┃ ┣ intent/
 ┃ ┃ ┣ eval.json
@@ -66,8 +66,10 @@ ADL21-HW1/
 
 ### Predict result with testing data and submit
 ```shell
-bash ./intent_cls.sh /path/to/test.json /path/to/pred.csv
-bash ./slot_tag.sh /path/to/test.json /path/to/pred.csv
+bash ./intent_cls.sh data/intent/test.json pred_intent.csv
+bash ./slot_tag.sh data/slot/test.json pred_slot.csv
+kaggle competitions submit -c intent-classification-ntu-adl-hw1-fall-2022 -f submission.csv -m "Message"
+kaggle competitions submit -c slot-tagging-ntu-adl-hw1-fall-2022 -f submission.csv -m "Message"
 ```
 
 ### How to reproduce `best_intent.ckpt`
@@ -77,11 +79,11 @@ bash ./slot_tag.sh /path/to/test.json /path/to/pred.csv
     - Generate vocab and embedding matrix
 - run the following command
 ```shell
-bash train_intent_cv.sh
+bash train_intent.sh
 ```
 - If you want to do cross validation for hyperparameter tuning, run
 ```shell
-python3 train_intent.py --data_dir data/intent --ckpt_dir ckpt/intent --device cuda
+bash train_intent_cv.sh
 ```
 
 ### How to reproduce `best_slot.ckpt`
@@ -95,5 +97,5 @@ bash train_slot.sh
 ```
 - If you want to do cross validation for hyperparameter tuning, run
 ```shell
-python3 train_intent.py --data_dir data/intent --ckpt_dir ckpt/intent --device cuda
+bash train_slot_cv.sh
 ```
