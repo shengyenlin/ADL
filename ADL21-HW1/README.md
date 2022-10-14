@@ -68,8 +68,8 @@ ADL21-HW1/
 ```shell
 bash ./intent_cls.sh data/intent/test.json pred_intent.csv
 bash ./slot_tag.sh data/slot/test.json pred_slot.csv
-kaggle competitions submit -c intent-classification-ntu-adl-hw1-fall-2022 -f submission.csv -m "Message"
-kaggle competitions submit -c slot-tagging-ntu-adl-hw1-fall-2022 -f submission.csv -m "Message"
+kaggle competitions submit -c intent-classification-ntu-adl-hw1-fall-2022 -f pred_intent.csv -m "Message"
+kaggle competitions submit -c slot-tagging-ntu-adl-hw1-fall-2022 -f pred_slot.csv -m "Message"
 ```
 
 ### How to reproduce `best_intent.ckpt`
