@@ -1,0 +1,13 @@
+__pycache__/
+.vscode/*
+.ipynb_checkpoints/*
+cache/*
+data/*
+ckpt/*
+Dockerfile
+requirements.in
+pred.eval.slot.csv
+pred.intent.csv
+pred.slot.csv
+Dockerfile
+requirements.in
