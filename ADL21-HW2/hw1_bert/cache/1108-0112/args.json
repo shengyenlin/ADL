@@ -1,0 +1,19 @@
+{
+    "train_file": "data/intent/train_organized.json",
+    "valid_file": "data/intent/eval_organized.json",
+    "config_name": null,
+    "tokenizer_name": null,
+    "model_name": "bert-base-uncased",
+    "train_batch_size": 32,
+    "valid_batch_size": 32,
+    "lr": 3e-05,
+    "weight_decay": 0.01,
+    "n_epoch": 5,
+    "grad_accum_steps": 2,
+    "sched_type": "linear",
+    "warmup_ratio": 0.1,
+    "log_steps": 50,
+    "eval_steps": 250,
+    "saved_dir": "./cache/1108-0112",
+    "seed": 14
+}

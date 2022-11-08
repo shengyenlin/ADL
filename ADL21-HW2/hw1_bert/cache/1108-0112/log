@@ -1,0 +1,19 @@
+Distributed environment: NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda
+Mixed precision type: no
+
+Saving tokenizer to ./cache/1108-0112/tokenizer...
+
+******** Running training ********
+Num train examples = 15000
+Num Epochs = 5
+Instantaneous batch size per device = 32
+Total train batch size (w/ parallel, distributed & accumulation) = 64
+Instantaneous steps per epoch = 469
+Update steps per epoch = 235
+Total update steps = 1175
+
+Epoch 01 / 05

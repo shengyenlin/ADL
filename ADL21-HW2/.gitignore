@@ -1,0 +1,7 @@
+.ipynb_checkpoints/
+Untitled*.ipynb
+__pycache__
+temp/
+data_unused/*
+work/
+requirements_evan.txt
